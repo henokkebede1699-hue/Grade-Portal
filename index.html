@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Grade Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="portal-container">
+        <div class="header-section">
+            <h2>Student Grade Portal</h2>
+            <p class="instructor">Instructor: Henok Kebede </p>
+            <p class="subtitle">Select your subject and enter your credentials to view your records.</p>
+        </div>
+        
+        <form id="searchForm" onsubmit="event.preventDefault(); checkScores();">
+            
+            <div class="input-group">
+                <label for="subjectSelect">Select Subject</label>
+                <select id="subjectSelect" required>
+                    <option value="" disabled selected>-- Choose a Course --</option>
+                    <option value="comp1012">Comp-1012: Computer Programming</option>
+                    <option value="moral101">Moral and Citizen</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="studentName">Full Name</label>
+                <input type="text" id="studentName" placeholder="e.g., Abigiael Ferenjo" autocomplete="off" required>
+            </div>
+
+            <div class="input-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" placeholder="e.g., NSR/0075/18" autocomplete="off" required>
+            </div>
+
+            <button type="submit" class="search-btn">Retrieve Grades</button>
+        </form>
+
+        <div id="errorMessage" class="error-msg"></div>
+
+        <div id="resultsCard" class="results-card hidden">
+            <h3>Student Performance Report</h3>
+            <div class="student-meta">
+                <p><strong>Course:</strong> <span id="resCourse"></span></p>
+                <p><strong>Name:</strong> <span id="resName"></span></p>
+                <p><strong>ID Number:</strong> <span id="resId"></span></p>
+                <p><strong>Status:</strong> <span id="resStatus" class="status-badge"></span></p>
+            </div>
+            
+            <table class="grade-table">
+                <thead>
+                    <tr>
+                        <th>Assessment Component</th>
+                        <th>Max Weight</th>
+                        <th>Score Achieved</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Assignments & Quizzes</td>
+                        <td>20%</td>
+                        <td id="gradeAssignments" class="score-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td>Project / Practical</td>
+                        <td>30%</td>
+                        <td id="gradeProject" class="score-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td>Final Examination</td>
+                        <td>50%</td>
+                        <td id="gradeFinal" class="score-cell">-</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>Total Aggregate</td>
+                        <td>100%</td>
+                        <td id="gradeTotal">-</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button class="reset-btn" onclick="resetPortal()">Check Another Student</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

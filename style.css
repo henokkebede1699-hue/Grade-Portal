@@ -1,0 +1,220 @@
+/* Base Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+.portal-container {
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    max-width: 450px;
+    transition: all 0.3s ease;
+}
+
+/* Header */
+.header-section {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f4f8;
+}
+
+h2 {
+    color: #102a43;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.instructor {
+    font-size: 13px;
+    color: #627d98;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #486581;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334e68;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e4e7eb;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #102a43;
+    background-color: #f8fbfa;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #2680eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(38, 128, 235, 0.15);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    border: none;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.search-btn {
+    background-color: #2680eb;
+    color: white;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(38, 128, 235, 0.2);
+}
+
+.search-btn:active {
+    transform: scale(0.98);
+}
+
+.search-btn:hover {
+    background-color: #1a66c2;
+}
+
+.reset-btn {
+    background-color: #f0f4f8;
+    color: #334e68;
+    margin-top: 20px;
+}
+
+.reset-btn:hover {
+    background-color: #e4e7eb;
+}
+
+/* Errors & States */
+.error-msg {
+    color: #d12c2c;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Results Card */
+.results-card {
+    margin-top: 25px;
+    animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+h3 {
+    color: #102a43;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.student-meta {
+    background: #f0f4f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #334e68;
+    border-left: 4px solid #2680eb;
+}
+
+.student-meta p {
+    margin-bottom: 6px;
+}
+.student-meta p:last-child {
+    margin-bottom: 0;
+}
+
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.pass { background: #e3fbed; color: #0d7f3c; }
+.fail { background: #ffe3e3; color: #c91a1a; }
+
+/* Table */
+.grade-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.grade-table th, .grade-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e4e7eb;
+}
+
+.grade-table th {
+    color: #627d98;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.score-cell {
+    font-weight: 600;
+    color: #102a43;
+}
+
+.total-row {
+    font-weight: 700;
+    background-color: #f8fbfa;
+}
+
+.total-row td {
+    border-bottom: none;
+    color: #1a66c2;
+    font-size: 15px;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
